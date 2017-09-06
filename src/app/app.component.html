@@ -1,14 +1,9 @@
 <div class="container">
   <div class="jumbotron">
-    <h1>Welcome</h1>
-    <h2>Angular & Bootstrap Demo</h2>
+    <h1>Status Reporter</h1>
+    <h2>Angular, Bootstrap, & D3</h2>
   </div>
 
-  <div class="panel panel-primary">
-    <div class="panel-heading">Status</div>
-    <div class="panel-body">
-      <h3>{{title}}</h3>
-      <app-bar-chart *ngIf="chartData" [data]="chartData"></app-bar-chart>      
-    </div>
-  </div>
+  <router-outlet></router-outlet>
+
 </div>
