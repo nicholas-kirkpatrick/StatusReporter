@@ -8,5 +8,5 @@ export class User {
         public role: string,
         public rate: number,
         public projectid: number
-    ){}
+    ) { }
 }
