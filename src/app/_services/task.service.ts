@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -7,14 +7,16 @@ import { Task } from '../_models/task';
 
 @Injectable()
 export class TaskService {
+    objectkyes = Object.keys;
+
     private tasksUrl = 'api/tasks'; //url to web api
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: Http) { }
 
     getTasks(): Promise<Task[]> {
         return this.http.get(this.tasksUrl)
             .toPromise()
-            .then(response => response as Task[])
+            .then(response => response.json().data as Task[])
             .catch(this.handleError);
     }
 
@@ -22,7 +24,7 @@ export class TaskService {
         const url = `${this.tasksUrl}/${id}`;
         return this.http.get(url)
             .toPromise()
-            .then(response => response as Task)
+            .then(response => response.json().data as Task)
             .catch(this.handleError);
     }
 
