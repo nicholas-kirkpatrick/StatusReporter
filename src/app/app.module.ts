@@ -15,7 +15,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { routing } from './app.routing';
 import { HomeComponent } from './home/home.component';
-import { LineChartComponent } from './charts/line-chart.component';
+import { BudgetChartComponent } from './charts/budget-chart.component';
+import { ScopeChartComponent } from './charts/scope-chart.component';
 import { TasksComponent } from './home/tasks.component';
 
 import { TaskService } from './_services/task.service';
@@ -25,7 +26,8 @@ import { TaskService } from './_services/task.service';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    LineChartComponent,
+    ScopeChartComponent,
+    BudgetChartComponent,
     TasksComponent
   ],
   imports: [
