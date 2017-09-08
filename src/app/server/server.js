@@ -2,6 +2,9 @@
 // Load dependencies
 const express = require('express');
 const app = express();
+//import the required dependencies
+const jwt = require('express-jwt');
+const jwks = require('jwks-rsa');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
@@ -9,7 +12,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-// Public route
+// We are going to implement a JWT middleware that will ensure the validity of our token. We'll require each protected route to have a valid access_token sent in the Authorization header
+const authCheck = jwt({
+    secret: jwks.expressJwtSecret({
+        cache: true,
+        rateLimit: true,
+        jwksRequestsPerMinute: 5,
+        jwksUri: "https://status-reporter.auth0.com/.well-known/jwks.json"
+    }),
+    // This is the identifier we set when we created the API
+    audience: 'status-reporter-api',
+    issuer: "https://status-reporter.auth0.com/",
+    algorithms: ['RS256']
+});
+
+// Task route
 app.get('/api/tasks', (req, res) => {
     let tasks = [
         // Array of tasks here

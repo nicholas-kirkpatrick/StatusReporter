@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { AuthService } from './auth.service';
+
 import { User } from '../_models/user';
 
 @Component({
@@ -13,7 +15,8 @@ export class LoginComponent {
 
     constructor(
         private route: ActivatedRoute,
-        private router: Router) { }
+        private router: Router,
+    ) { }
 
     login() {
         this.loading = true;

@@ -20,8 +20,11 @@ import { ProjectsComponent } from './home/projects.component';
 
 import { TaskService } from './_services/task.service';
 import { ProjectService } from './_services/project.service';
-import { AuthService } from './_services/auth.service';
 
+//imports for authentication
+import { AuthService } from './login/auth.service';
+import { AuthGuardService } from './login/auth-guard.service';
+import { CallbackComponent } from './login/callback.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import { AuthService } from './_services/auth.service';
     BudgetChartComponent,
     LineChartComponent,
     TasksComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,7 @@ import { AuthService } from './_services/auth.service';
     NgbModule.forRoot(),
     ChartsModule,
   ],
-  providers: [TaskService, ProjectService],
+  providers: [TaskService, ProjectService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

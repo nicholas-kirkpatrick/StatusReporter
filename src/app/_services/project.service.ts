@@ -3,6 +3,8 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 import 'rxjs/add/operator/toPromise';
 
+import { AuthHttp } from 'angular2-jwt';
+
 import { Project } from '../_models/project';
 
 @Injectable()
