@@ -1,13 +1,15 @@
 <div class="panel panel-default">
     <div class="panel-heading">Task Overview</div>
-    <div class="col-xs-10 col-xs-offset-1 nwk-voffset">
-        <table class="table table-responsive table-condensed table-striped thead-default">
-            <tr>
-                <th *ngFor="let key of getKeys()">{{key}}</th>
-            </tr>
-            <tr *ngFor="let task of tasks">
-                <td *ngFor="let key of getKeys()">{{task[key]}}</td>
-            </tr>
-        </table>
+    <div class="panel-body">
+        <div class="nwk-voffset">
+            <table class="table table-responsive table-condensed table-striped thead-default">
+                <tr>
+                    <th *ngFor="let key of getKeys()">{{key}}</th>
+                </tr>
+                <tr *ngFor="let task of tasks">
+                    <td *ngFor="let key of getKeys()">{{task[key]}}</td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>

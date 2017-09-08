@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Task } from '../_models/task';
 import { TaskService } from '../_services/task.service'
+//import { AuthService } from '../_services/auth.service';
 
 @Component({
     selector: 'tasks-component',

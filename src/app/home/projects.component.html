@@ -1,0 +1,13 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Current Projects</div>
+
+    <div class="panel-body">
+        <div *ngFor="let project of projects">
+            <button class="nwk-button col-sm-4" (click)="selectProject($event,project)">
+                <span>{{project.name}}</span>
+                <br/>
+                <span>Budget: ${{project.budget}}</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -3,28 +3,28 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Task } from '../_models/task';
+import { Project } from '../_models/project';
 
 @Injectable()
-export class TaskService {
-    objectkyes = Object.keys;
+export class ProjectService {
+    private headers = new Headers({ 'Content-Type': 'application/json' });
 
-    private tasksUrl = 'http://localhost:3001/api/tasks'; //url to web api
+    private projectsUrl = 'http://localhost:3001/api/projects'; //url to web api
 
     constructor(private http: HttpClient) { }
 
-    getTasks(): Promise<Task[]> {
-        return this.http.get(this.tasksUrl)
+    getProjects(): Promise<Project[]> {
+        return this.http.get(this.projectsUrl)
             .toPromise()
-            .then(response => response as Task[])
+            .then(response => response as Project[])
             .catch(this.handleError);
     }
 
-    getTask(id: number): Promise<Task> {
-        const url = `${this.tasksUrl}/${id}`;
+    getProject(id: number): Promise<Project> {
+        const url = `${this.projectsUrl}/${id}`;
         return this.http.get(url)
             .toPromise()
-            .then(response => response as Task)
+            .then(response => response as Project)
             .catch(this.handleError);
     }
 

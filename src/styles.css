@@ -10,3 +10,31 @@
 .nwk-voffset {
     margin-top: 10px;
 }
+.nwk-voffset2 {
+    margin-top: 20px;
+}
+
+
+.nwk-button {
+    display: inline-block;
+    height: 100px;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #1995dc;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin: 5px;
+}
+
+.nwk-button:hover {background-color: #155072}
+
+.nwk-button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}

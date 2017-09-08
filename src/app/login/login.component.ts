@@ -20,11 +20,11 @@ export class LoginComponent {
 
         setTimeout(() => {
             if (this.model.userid == '1') {
-                console.log("success");
+                console.log("successful login");
                 this.router.navigate(['/home']);
             }
             else {
-                console.log("failure to login");
+                console.log("failed login");
                 this.loading = false;
                 this.model.userid = '';
             }
